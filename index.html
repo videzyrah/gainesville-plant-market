@@ -8,16 +8,28 @@
     <title>Gainesville Plant Market </title>
 </head>
 <body>
-    <a href = "/retailers.html"> -> Growers</a>
+  <h1 id = "banner">Gainesville Plant Exchange Market </h1>
+    <a href = "/retailers.html"> -> Growers Directory</a>
+    
     <div id ="app">
-      <div v-for="item in plants"> 
-       <div class = "plant">
-         <h3 id = "plant-name">{{ item.screen_name }}</h3>
+      <b class="align-right">Wishlist ({{wishlist.length}})</b>
+      <div v-for="item in wishlist" class="align-right">
+        <i>{{item.screen_name}}</i>
+      </div>
+      <label for="formMax">Maximum Price: ($)</label>
+      <input type="text" id="formMax" v-model="maximum" placeholder="edit me"/>
+      <input type ="range" min="0" max="100" v-model="maximum" />
+      
+      <div v-for="item in plants">
+         <div class = "plant"
+           v-if="item.price <= Number(maximum)">
+         <h3 id="plant-name">{{ item.screen_name }}</h3>
          <img :src="item.image" class ="center">
+         <span><button title="Add to Wishlist" v-on:click="addItem(item)">+</button></span>
          <span><b>Average Price: </b>{{ item.price }}</span>
          <span><b>Growers: </b></span>
-         <span v-html="item.retailers"><b>Growers: </b></span>   
-       </div> 
+         <span v-html="item.retailers"><b>Growers: </b></span>
+         </div>   
        <br> 
       </div>
     </div>
