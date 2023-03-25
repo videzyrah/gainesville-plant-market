@@ -1,0 +1,4 @@
+Can add growers to plant in Django Admin but not DajangoRestAPI gui or Swagger it appears.  Can it be done with a Flask version?
+Will I be able to create a superuser on fly.io is the question I suppose.  If so it won't matter?
+--https://stackoverflow.com/questions/67095547/many-to-many-field-post-requests-on-api-django-rest-framework
+3/5/2023- Got project to run locally  file:///C:/Users/Greg/Documents/My%20Web%20Sites/gainesville-plant-market/index.html   -----  http://127.0.0.1:8000/plants/
