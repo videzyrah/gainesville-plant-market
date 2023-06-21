@@ -12,7 +12,7 @@ const app = Vue.createApp({
       }
     },
     mounted: function() {
-      fetch('https://gregstull.fly.dev/plants/', {
+      fetch('https://gregprojects.fly.dev/plants/', {
         method: 'get'
       })
       .then((response) => {
